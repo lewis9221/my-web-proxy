@@ -1,0 +1,8 @@
+{
+  "name": "web-proxy-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A restricted educational reverse proxy for example.com",
+  "scripts": {"start": "node server.js"},
+  "engines": {"node": ">=18"}
+}

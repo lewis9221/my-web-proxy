@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web Proxy Starter</title>
+<style>body{font:16px system-ui;background:#101827;color:#f6f9fc;margin:0;padding:5vw}main{max-width:750px;margin:auto}button{border:0;border-radius:9px;background:#5be3b6;color:#092015;font-weight:700;padding:13px 20px;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#202c3f;border-radius:10px;padding:16px}p{line-height:1.6;color:#d8e2ef}</style>
+</head>
+<body><main><h1>Web Proxy Starter</h1><p>This is a safe demonstration of a server retrieving a page from a <strong>fixed, public demo site</strong>. It doesn't bypass network rules or open arbitrary websites.</p><button id="load">Load demo page through server</button><pre id="output">Click the button to see the response.</pre></main>
+<script>document.getElementById('load').addEventListener('click',async()=>{const out=document.getElementById('output');out.textContent='Loading…';try{const r=await fetch('/api/demo');const data=await r.json();if(!r.ok)throw Error(data.error||'Request failed');out.textContent='Fetched from: '+data.source+'\n\nFirst 1,800 characters:\n'+data.preview}catch(e){out.textContent=e.message}})</script>
+</body></html>
